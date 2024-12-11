@@ -1,13 +1,13 @@
-import { format } from 'date-fns'
-import { prisma } from '@/lib/prisma'
-import Link from 'next/link'
+import { format } from 'date-fns';
+import { taskDb } from '@/lib/db';
+import Link from 'next/link';
 
 export default async function HistoryPage() {
-  const tasks = await prisma.task.findMany({
+  const tasks = await taskDb.findMany({
     orderBy: {
       date: 'desc',
     },
-  })
+  });
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -58,5 +58,5 @@ export default async function HistoryPage() {
         </div>
       </div>
     </main>
-  )
+  );
 }
