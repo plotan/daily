@@ -1,5 +1,6 @@
-import Link from 'next/link'
-import { TaskForm } from '@/components/task-form'
+import { TaskForm } from '@/components/task-form';
+import { TaskList } from '@/components/task-list';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         
         <div className="max-w-2xl mx-auto">
           <TaskForm />
+          <TaskList />
           
           <div className="mt-8 text-center">
             <Link 
@@ -24,5 +26,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }

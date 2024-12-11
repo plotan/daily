@@ -16,3 +16,17 @@ export async function POST(request: Request) {
     );
   }
 }
+
+export async function GET() {
+  try {
+    const tasks = await taskDb.findMany({
+      orderBy: { date: 'desc' }
+    });
+    return NextResponse.json(tasks);
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Failed to fetch tasks' },
+      { status: 500 }
+    );
+  }
+}
