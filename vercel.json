@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "POSTGRES_PRISMA_URL": "@postgres-prisma-url",
+    "POSTGRES_URL_NON_POOLING": "@postgres-url-non-pooling"
+  }
+}
